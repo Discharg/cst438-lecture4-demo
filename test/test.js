@@ -5,7 +5,7 @@ var sinon = require("sinon");
 
 var sandbox; 
 
-// Dank Memes
+// Dank Meme
 
 //  beforeEach(function() {
 //     // create a sandbox
@@ -63,7 +63,16 @@ describe("Getty api call", function() {
             done(); 
         });
     }); 
-    
+    it("The url should be a string", function(done) {
+        
+        getty.makeApiRequest(function(error, imgURI) {
+            //console.log("tweets: " + tweets.length); 
+            console.log("imageURI!: " + imgURI); 
+            
+            expect(imgURI).to.be.a('string'); 
+            done(); 
+        });
+    }); 
     
     
 }); 
